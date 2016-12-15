@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.viewtest.design.myview.MainActivity">
+
+    <!--<com.viewtest.design.myview.MyCircleImage-->
+        <!--app:img="@drawable/bird"-->
+        <!--android:layout_width="128sp"-->
+        <!--android:layout_height="128sp"-->
+        <!--/>-->
+ <TextView
+     android:id="@+id/textView"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="hello"/>
+
+
+</RelativeLayout>
