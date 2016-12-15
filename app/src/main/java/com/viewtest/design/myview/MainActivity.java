@@ -107,5 +107,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }).subscribe(subscriber);
     }
+
+    @Override
+    public void setFinishOnTouchOutside(boolean finish) {
+        super.setFinishOnTouchOutside(finish);
+    }
 }
 
