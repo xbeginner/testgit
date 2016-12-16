@@ -9,10 +9,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.viewtest.design.myview.RecyclerViewActivity">
 
-  <android.support.v7.widget.RecyclerView
-      android:id="@+id/myRecyclerView"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-  </android.support.v7.widget.RecyclerView>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/myRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
 
 </RelativeLayout>

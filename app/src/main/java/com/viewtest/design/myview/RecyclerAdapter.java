@@ -44,8 +44,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             super(itemView);
             textView = (TextView)itemView.findViewById(R.id.textView);
         }
-
-
     }
 
 }
