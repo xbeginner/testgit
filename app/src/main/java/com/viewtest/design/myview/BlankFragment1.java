@@ -4,9 +4,14 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -23,6 +28,10 @@ public class BlankFragment1 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private RecyclerView recyclerView;
+
+    private View view;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -30,7 +39,7 @@ public class BlankFragment1 extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public BlankFragment1() {
-        // Required empty public constructor
+
     }
 
     /**
@@ -58,13 +67,15 @@ public class BlankFragment1 extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank_fragment1, container, false);
+        view = inflater.inflate(R.layout.fragment_blank_fragment1, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -83,6 +94,25 @@ public class BlankFragment1 extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        //初始化RecyclerView
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.myRecyclerView);
+
+        List<String> titles = new ArrayList<String>();
+
+        for(int i = 0;i<20;i++){
+            titles.add("title"+i);
+        }
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setHasFixedSize(true);
+        MyRecyclerAdapter adapter = new MyRecyclerAdapter(titles);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
